@@ -1,0 +1,26 @@
+{
+  "name": "sirkit",
+  "version": "0.0.1",
+  "description": "Framework for creating Components that exhibit dataflow behaviors, and can be connected into complex reactive graphs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mangr3n/sirkit.git"
+  },
+  "keywords": [
+    "fbp",
+    "graflow"
+  ],
+  "author": "David Boyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mangr3n/sirkit/issues"
+  },
+  "homepage": "https://github.com/mangr3n/sirkit#readme",
+  "dependencies": {
+    "ramda": "^0.25.0"
+  }
+}
