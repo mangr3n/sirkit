@@ -4,7 +4,7 @@
   "description": "Framework for creating Components that exhibit dataflow behaviors, and can be connected into complex reactive graphs.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,16 @@
   },
   "homepage": "https://github.com/mangr3n/sirkit#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.2.5",
     "ramda": "^0.25.0",
     "snabbdom": "^0.7.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-typescript": "^7.1.0",
+    "jest": "^24.0.0",
+    "typescript": "^3.3.1"
   }
 }

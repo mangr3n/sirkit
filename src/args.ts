@@ -1,5 +1,6 @@
 import { EVENT } from './interfaces';
-import { merge, reduce, is, length, isNil, dissoc } from 'ramda';
+import { merge } from './util/funcs';
+import { reduce, is, length, isNil, dissoc } from 'ramda';
 
 const fromNoArgs = () => ({
   name: 'Identity',
@@ -10,6 +11,7 @@ const fromNoArgs = () => ({
 
 // A String by itself in the arg list is the name of the Component
 const fromStringArg = (original, arg) => merge(original, { name: arg });
+
 // A Boolean value by itself in the arg list is the debug arg.
 const fromBooleanArg = (original, arg) => merge(original, { debug: arg });
 // A Function value by itself in the arg list is the function that takes value and the next function and invokes next with the resulting value.
