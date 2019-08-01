@@ -1,5 +1,5 @@
 import { Component, Mapper } from '..';
-import { map } from 'ramda';
+import { map } from 'nanoutils';
 
 
 export const Hub = (...inputs) => {

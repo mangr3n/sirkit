@@ -1,4 +1,4 @@
-import { isNil } from 'ramda';
+import { isNil } from 'nanoutils';
 import { toArgsObject } from './args';
 import { FunctionComponent } from './FunctionComponent';
 import { GraphComponent } from './GraphComponent';

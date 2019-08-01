@@ -1,5 +1,5 @@
-import { ComponentID, ConnectionID, nextID } from './ID';
-import { equals } from 'ramda';
+import { ComponentID, ConnectionID } from './ID';
+import {equals} from "nanoutils";
 
 export const EVENT = 'event';
 export const SIGNAL = 'signal';

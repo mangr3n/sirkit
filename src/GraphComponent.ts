@@ -1,5 +1,5 @@
 import { Component } from "./interfaces";
-import { isNil, uniq, append, fromPairs, map, keys } from 'ramda';
+import { isNil, uniq, append, fromPairs, map, keys } from 'nanoutils';
 import { nextID } from './ID';
 import { debugMessage } from './util/debug';
 import { Identity } from './index';
@@ -21,7 +21,7 @@ const selectNode = (name, components, io = 'inputs') => {
   }
   const nodes = component[direction];
   if (isNil(nodes) || isNil(nodes[nodeName])) {
-    throw new Error(`Port(${name} not found!`);
+    throw new Error(`Port(${name}) not found!`);
   }
   return nodes[nodeName];
 };
@@ -88,7 +88,7 @@ export const GraphComponent: (any) => Component = (arg) => {
   };
 
   const send = (...args) => {
-    const [value = {}, nodeName = 'default'] = args.splice(0, 2).reverse()
+    const [value = {}, nodeName = 'default'] = args.splice(0, 2).reverse();
     if (isNil(inNodes[nodeName])) throw new Error(`${DEBUG_LABEL}/off: outNodes[${nodeName}] not found`);
     inNodes[nodeName].send(value)
   };
@@ -104,7 +104,7 @@ export const GraphComponent: (any) => Component = (arg) => {
         keys(components)
       )
     }
-  }
+  };
 
   const description = () => ({
     name,
@@ -130,4 +130,4 @@ export const GraphComponent: (any) => Component = (arg) => {
     debugMessage(DEBUG_LABEL, 'created', result);
   }
   return result;
-}
+};

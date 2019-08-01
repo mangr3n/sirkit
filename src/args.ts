@@ -1,6 +1,7 @@
+import {isNil,reduce,dissoc,is,length} from "nanoutils";
+
 import { EVENT } from './interfaces';
 import { merge } from './util/funcs';
-import { reduce, is, length, isNil, dissoc } from 'ramda';
 
 const fromNoArgs = () => ({
   name: 'Identity',
@@ -22,7 +23,7 @@ const fromArrayArg = (original, argArray) => reduce((acc, v) => processArg(acc, 
 const fromObjectArg = (original, argObject) => {
   if (!isNil(argObject.components)) original = dissoc('onNext', original);
   return merge(original, argObject);
-}
+};
 
 const processArg = (original, arg) => {
   if (is(String, arg)) return fromStringArg(original, arg);
@@ -31,6 +32,6 @@ const processArg = (original, arg) => {
   else if (is(Array, arg)) return fromArrayArg(original, arg);
   else if (is(Object, arg)) return fromObjectArg(original, arg);
   else throw new Error(`Component/processOneArg, arg can't be processed: ${arg}`);
-}
+};
 
 export const toArgsObject = (args: any[]) => length(args) === 0 ? fromNoArgs() : fromArrayArg(fromNoArgs(), args);

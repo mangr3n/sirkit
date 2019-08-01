@@ -1,11 +1,11 @@
 import { Component, Mapper, Demuxer } from '..';
 
-export const Memorizer = () => {
-  let memory;
+export const Memorizer = (initialMemory=null) => {
+  let memory = initialMemory;
   return Component({
     inputs: ['memory', 'value'],
     components: {
-      memory: Component(v => { memory = v; }), // in.memory is saved
+      memory: Component(v => { memory = v; }), // in.memory is saved no value is sent out
       mapper: Mapper(value => ({ value, memory })), // in.value fires both value and memory out
       demuxer: Demuxer('memory', 'value')
     },
@@ -16,6 +16,7 @@ export const Memorizer = () => {
       ['in', 'demuxer'],
       ['demuxer.memory', 'memory'],
       ['demuxer.value', 'mapper']
-    ]
+    ],
+    // debug: ['in','in.memory','in.value']
   });
 };

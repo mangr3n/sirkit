@@ -1,11 +1,9 @@
-type ID = number;
-type ConnectionID = ID;
-type ComponentID = ID;
+export type ID = number;
+export type ConnectionID = ID;
+export type ComponentID = ID;
 
 let _nextId: ID = 0;
 
-const nextID: () => ID = () => {
+export const nextID: () => ID = () => {
   return _nextId++;
 };
-
-export { ID, ConnectionID, ComponentID, nextID };

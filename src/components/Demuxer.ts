@@ -1,12 +1,12 @@
 import { Component } from '..';
-import { flatten, reduce, map, concat, isNil } from 'ramda';
+import { reduce, map, concat, isNil } from 'nanoutils';
 
 const outputReducer = (acc, output) => {
   acc[output] = Component((v, next) => {
     if (!isNil(v[output])) next(v[output]);
   });
   return acc;
-}
+};
 
 export const Demuxer = (...outputs) => {
   const components = reduce(outputReducer, {}, outputs);
@@ -21,4 +21,4 @@ export const Demuxer = (...outputs) => {
     connections,
     // debug: ['in', 'out']
   });
-}
+};

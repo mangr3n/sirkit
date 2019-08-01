@@ -1,5 +1,4 @@
 import { Component } from './Component';
-import { is, map, toPairs, assoc } from 'ramda';
 
 export { Component } from './Component';
 
@@ -16,16 +15,10 @@ export { Memorizer } from './components/Memorizer';
 export { Muxer } from './components/Muxer';
 export { Serializer } from './components/Serializer';
 export { UniqueFilter } from './components/UniqueFilter';
-export const Mapper = (fn) => Component((v, next) => next(fn(v)), { name: `Mapper(${fn.name})` });
-export const Identity = (name = "Identity") => Component(name, (v, next) => next(v));
-export const Filter = (cond) => Component((v, next) => { if (cond(v)) next(v) });
-export const Repeater = (times) => Component((v, next) => {
-  for (let i = 0; i <= times; i++) next(v);
-});
-export const Ticker = (ms, { value = {}, initialDelay = false } = { value: {}, initialDelay: false }) => {
-  return Component((v, next) => {
-    if (!initialDelay) next(value)
-    setInterval(() => next(value), ms);
-  });
-};
+export { Null } from './components/Null';
+export { Mapper } from './components/Mapper';
+export { Identity } from './components/Identity';
+export { Filter } from './components/Filter';
+export { Repeater } from './components/Repeater';
+export { Ticker } from './components/Ticker';
 

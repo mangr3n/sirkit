@@ -1,3 +1,4 @@
+declare var Symbol;
 import { Component } from '..';
 
 export const Serializer = () => Component((iterable, next) => {

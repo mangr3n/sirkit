@@ -1,4 +1,8 @@
+declare var require;
 const { toArgsObject } = require('../src/args');
+
+declare var expect;
+declare var test;
 
 test('expect string to return a named Identity Component', () => {
   expect(toArgsObject(['test'])).toMatchObject({
@@ -16,4 +20,4 @@ test('expect function to return an ArgsObject with that Function', () => {
   expect(toArgsObject([idFunc])).toMatchObject({
     onNext: idFunc
   });
-})
+});

@@ -1,5 +1,5 @@
 import { Component } from '..';
-import { reduce, keys, map, concat, range } from 'ramda';
+import { reduce, keys, map, concat, range } from 'nanoutils';
 
 export const Chain = (...args) => {
   const lastIndex = args.length - 1;
