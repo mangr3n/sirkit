@@ -1,5 +1,5 @@
 import { Component } from '..';
-import { map, is, assoc, toPairs } from 'ramda';
+import { map, is, assoc, toPairs } from 'nanoutils';
 
 export const Accumulator = (initial = {}, name = '') => {
   let obj = initial;
